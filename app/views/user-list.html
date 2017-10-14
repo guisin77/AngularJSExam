@@ -1,0 +1,67 @@
+<div>
+  <h1>User List</h1>
+  <table class="table">
+    <thead><tr><th>id</th><th>name</th><th>age</th><th>modify</th><th>delete</th> </tr></thead>
+    <tbody>
+      <tr ng-repeat="obj in userList">
+        <!--
+        <td><button type="button" class="btn btn-info btn-lg"   ng-click="requestUserDetail(obj.id)"  >{{obj.id}}</button> </td>
+         -->
+         <td><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" ng-click="requestUserDetail(obj.id)"  >{{obj.id}}</button> </td>
+               
+        <td><input type="text" class="form-control" ng-model="obj.name"></td>
+        <td><input type="text" class="form-control" ng-model="obj.age"></td> 
+       <td><button type="button" class="btn btn-warning" ng-click="modifyUserInfo(obj.id, obj.name, obj.age)"  >edit</button></td>
+        <td><button type="button" class="btn btn-danger" ng-click="deleteUserInfo(obj.id)"  >delete</button></td>
+       
+      </tr>
+    </tbody>
+  </table>
+
+<!--
+<table class="table"> 
+      <thead><tr><th>id</th><th>name</th><th>age</th> </tr></thead>
+      <tr ng-repeat="obj2 in userDetail">
+        <td>{{obj2.id}}  </td>
+        <td>{{obj2.name}}</td>
+        <td>{{obj2.age}}</td>   
+      </tr>
+    </table>
+-->
+
+
+ <!-- Trigger the modal with a button -->
+  
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">User Detail </h4>
+        </div>
+        <div class="modal-body">
+          
+   
+    <table class="table"> 
+      <thead><tr><th>title</th><th>value</th> </tr></thead>
+      <tbody>
+      <tr><th>id   </th><td>{{userDetail.id}}   </td></tr>
+      <tr><th>name </th><td>{{userDetail.name}} </td></tr>   
+      <tr><th>age  </th><td>{{userDetail.age}}  </td></tr>  
+    </tbody>
+    </table>
+  
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>  
+</div>
